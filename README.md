@@ -8,13 +8,13 @@ Pages:
 3. log in
 4. search available textbooks
     - utilize SQL database of books added by other users
-5. add textbooks
+5. add books
     - potential API (google books)
     - option to enter condition of book
     - option to enter publishing year or manually change? (look at api for how to use this)
     - add to SQL database
     - then redirect to a history page
-6. My textbooks - textbooks you have added
+6. My books - books you have added that you're willing to give away
     - show covers from API, make it pretty
     - searchable? filter out w search bar?
     - favoritable 
