@@ -1,0 +1,40 @@
+body {
+    /* background-color: #017199 */
+    background-image: url(https://wallpaperaccess.com/full/2114456.jpg);
+    background-color: #017199;
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .addbody {
+    {
+        background: url(https://cdn.shopify.com/s/files/1/1921/9113/products/Full_1.2_WEB_5c38aaef-29a2-41a1-883b-1aa9eabdaba5_1024x1024.jpg?v=1566506777) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+  }
+  
+  .center {
+    margin: auto;
+    margin-top: 200px;
+  }
+  
+  #header {
+    font-family: 'Righteous', sans-serif;
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-family: 'Righteous', sans-serif;
+  }
+  
+  .book-list {
+    margin-top: 50px;
+    visibility: hidden;
+  }
+  
