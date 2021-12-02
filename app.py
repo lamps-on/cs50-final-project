@@ -26,8 +26,17 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 # db = SQL("sqlite:///finance.db")
 
+
 @app.route("/")
-# @login_required
 def index():
 
     return render_template("index.html")
+
+
+@app.route("/add-book")
+def add_book():
+    return render_template("add_book.html")
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
