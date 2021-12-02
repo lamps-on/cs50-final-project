@@ -37,6 +37,36 @@ def index():
 def add_book():
     return render_template("add_book.html")
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
-    return render_template("register.html")
+    """Register user for an account."""
+
+    # POST
+    if request.method == "POST":
+
+        # Validate form submission
+        if not request.form.get("username"):
+            return apology("missing username")
+        elif not request.form.get("password"):
+            return apology("missing password")
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("passwords don't match")
+
+        # Add user to database
+        try:
+            id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+                            request.form.get("username"),
+                            generate_password_hash(request.form.get("password")))
+        except ValueError:
+            return apology("username taken")
+
+        # Log user in
+        session["user_id"] = id
+
+        # Let user know they're registered
+        flash("Registered!")
+        return redirect("/")
+
+    # GET
+    else:
+        return render_template("register.html")

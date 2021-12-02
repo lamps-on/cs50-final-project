@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>My Books</title>
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-  </head>
-  <body class="addbody">
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Book
+{% endblock %}
+
+{% block main %}
+  <body class="background">
     <div class="container">
       <div id="title" class="center">
         <h1 id="header" class="text-center mt-5">Add Books</h1>
         <div class="row">
           <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
-            <input id="search-box" type="text" class="form-control" placeholder="Search Books!...">
+            <input id="search-box" type="text" class="form-control" placeholder="Search books to give away...">
             <button id="search" class="btn btn-primary" onclick="">Search</button>
         </div>
         </div>
@@ -34,6 +34,6 @@
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="index.html"></script>
+    <script src="myscript.js"></script>
   </body>
-</html>
+{% endblock %}
