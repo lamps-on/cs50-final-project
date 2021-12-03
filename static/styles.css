@@ -12,8 +12,9 @@
   }
   
   #header {
-    font-family: 'Righteous', sans-serif;
-    font-size: 3rem;
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
   }
   
   h2 {

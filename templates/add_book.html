@@ -11,25 +11,19 @@
   <body class="background">
     <div class="container">
       <div id="title" class="center">
-        <h1 id="header" class="text-center mt-5">Add Books</h1>
+        <span id = "header" class="text-center mt-5" style="background-color: #FFFFFF">Search For Any Book</span>
         <div class="row">
-          <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
-            <input id="search-box" type="text" class="form-control" placeholder="Search books to give away...">
-            <button id="search" class="btn btn-primary" onclick="">Search</button>
-        </div>
-        </div>
-      </div>
-      <div class="book-list" >
-        <h2 class="text-center">Search Result</h2>
-        <div id="list-output" class="">
-          <div class="row">
-            <!-- card  -->
-
-          </div>
-
+          <form action="/add-books" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" name="isbn" placeholder="Type an ISBN #" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+          <div>
         </div>
       </div>
     </div>
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
