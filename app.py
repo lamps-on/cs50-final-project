@@ -2,7 +2,6 @@ import os
 import cs50
 from types import GetSetDescriptorType
 
-from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
@@ -33,8 +32,15 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 # db = SQL("sqlite:///finance.db")
+while true:
+    api = "https://www.googleapis.com/books/v1/volumes?q=isbn:"
+    isbn = request.form.get("isbn")
 
+    response = urlopen(api + isbn)
 
+    bookdata = json.loads(response.read())
+
+    print(bookdata)
 
 @app.route("/")
 def index():
