@@ -1,4 +1,6 @@
 import os
+import cs50
+from types import GetSetDescriptorType
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -6,6 +8,12 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
+
+# Built-in to Python; will allow program to read Json files
+import json
+
+# Allows program to open specific url with API key and search terms
+from urllib.request import urlopen
 
 # from helpers import apology, login_required, lookup, usd
 
@@ -27,15 +35,40 @@ Session(app)
 # db = SQL("sqlite:///finance.db")
 
 
+
 @app.route("/")
 def index():
 
     return render_template("index.html")
 
 
-@app.route("/add-book")
+@app.route("/add-book", methods=["GET", "POST"])
 def add_book():
-    return render_template("add_book.html")
+    while true:
+        api = "https://www.googleapis.com/books/v1/volumes?q=isbn:"
+        isbn = request.form.get("isbn")
+
+        response = urlopen(api + isbn)
+
+        bookdata = json.loads(response.read())
+
+        print(bookdata)
+        volume_info = bookdata["items"][0]["volumeInfo"]
+        title = volume_info["title"]
+        print(title)
+
+        if request.method == "GET":
+            return render_template("add_book.html")
+
+        else:
+           #print(f"Title: {title}")
+            return render_template("searched.html", title=title)
+
+        
+        # get isbn from form request
+        # https://www.googleapis.com/books/v1/volumes?q=:keyes&key=yourAPIKey
+
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

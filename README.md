@@ -30,3 +30,6 @@ Kaitlin:
 - setting up register and login routes instead
 
 Pri: build basic structure of pages 
+
+
+How are we gonna share code? https://gist.github.com/ 
