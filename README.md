@@ -4,24 +4,28 @@ CS50 Final Project - Kaitlin Lampson, Ella Lee, Priyanka Kaul
 Pages:
 1. index (HOME -- about)
 2. register
-    - require college.harvard.edu email (for privacy since we share emails w users)
+    - from finance 
+    - no username (just email and password)
+        - require email to have @college.harvard.edu or @fas.harvard.edu
+        - require password to have a certain amount of characters/special characters ... something
 3. log in
-4. search available textbooks
-    - utilize SQL database of books added by other users
-5. add books
+    - from finance
+4. search textbooks
+    - search box
     - potential API (google books)
-    - option to enter condition of book
-    - option to enter publishing year or manually change? (look at api for how to use this)
-    - add to SQL database
-    - then redirect to a history page
-6. My books - books you have added that you're willing to give away
-    - show covers from API, make it pretty
-    - searchable? filter out w search bar?
-    - favoritable 
-        - add to different sql database - library or favorites database
-7. "shopping cart" or "favorites" or "library"
-    - displays info from favorties/library sql database
-        - displays title, cover(?), email of donor 
+    - be able to favorite certain textbooks
+5. add textbooks
+    - should be similar to register page I think
+        - connect title to Google Books API description
+        - add condition of book
+        - an option for a comment
+6. My textbooks
+    - displays posted textbooks
+    - allows you to take down post
+7. "Favorites"
+    - favorited textbooks(as well as their information) pop up here
+    - email pops up once book is favorited
+    - if book is unfavorited, email goes away
 
 Ella: logo/name
 
