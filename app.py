@@ -27,9 +27,9 @@ Session(app)
 db = SQL("sqlite:///bookswap.db")
 
 # Create new table, and index
-db.execute("CREATE TABLE IF NOT EXISTS orders (id INTEGER, user_id NUMERIC NOT NULL, title TEXT NOT NULL, \
+db.execute("CREATE TABLE IF NOT EXISTS registrations (id INTEGER, user_id NUMERIC NOT NULL, password TEXT NOT NULL, \
             timestamp TEXT, PRIMARY KEY(id), \
-            FOREIGN KEY(user_id) REFERENCES users(id))")
+            FOREIGN KEY(user_id)")
 db.execute("CREATE INDEX IF NOT EXISTS orders_by_user_id_index ON orders (user_id)")
 
 
@@ -58,3 +58,6 @@ def register():
     session["user_id"] = rows[0]["id"]
     return redirect("/")
 
+    # Joining two tables 
+    db.execute("CREATE TABLE IF NOT EXSITS books (id INTEGER, title TEXT NOT NULL, author TEXT NOT NULL, seller TEXT NOT NULL"))
+    join = "INNER JOIN books ON registrations.users_id = books.seller"

@@ -29,6 +29,8 @@ Pages:
 
 Ella: logo/name
 
-Kaitlin: API
+Kaitlin:
+- API is rly hard idk what im doing
+- setting up register and login routes instead
 
 Pri: build basic structure of pages 
